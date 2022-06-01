@@ -25,13 +25,24 @@
   // Usually, this is a class to control the view that is displayed to the user.
   // Remember that we can have many views that do this same job.
   class ProductBloc {
+    private productServices: ProductServices;
+    private mailer: Mailer;
+
+    constructor(productServices: ProductServices, mailer: Mailer) {
+      this.productServices = productServices;
+      this.mailer = mailer;
+    }
+
     loadProduct(id: number) {
-      // Performs a process to obtain the product and return it to the customer.
-      console.log('Product: ', { id, name: 'OLED Tv' });
+      this.productServices.getProduct(id);
+    }
+
+    saveProduct(product: Product) {
+      this.productServices.saveProduct(product);
     }
 
     notifyClients() {
-      console.log('Sending mail to customers');
+      this.mailer.sendEmail(['anbreaker@gmail.com'], 'to-clients');
     }
   }
 
@@ -43,7 +54,10 @@
     }
   }
 
-  const productBloc = new ProductBloc();
+  const productServices = new ProductServices();
+  const mailer = new Mailer();
+
+  const productBloc = new ProductBloc(productServices, mailer);
   const cartBlock = new CartBlock();
 
   productBloc.loadProduct(10);
