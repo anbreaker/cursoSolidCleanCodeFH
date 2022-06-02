@@ -1,3 +1,15 @@
+# SOLID and Clean Code principles,
+
+### Fundamentals of software architecture and development.
+
+<br/>
+
+<p align="center">
+  <img src="https://github.com/anbreaker/cursoSolidCleanCodeFH/blob/view/UC-1accb2c6-4545-4f56-80d8-1c18267cc157.jpg?raw=true">
+</p>
+
+<br>
+
 # Proyecto para practicar
 
 SOLID and Clean Code principles, Fundamentals of software architecture and development.
